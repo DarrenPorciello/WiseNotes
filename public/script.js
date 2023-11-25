@@ -32,19 +32,27 @@ function speechToText() {
 
     recognition.onresult = (event) => {
       const speechResult = event.results[0][0].transcript;
-      // detect when interim results
+    
+      // Function to capitalize the first letter of a string
+      function capitalizeFirstLetter(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+      }
+    
+      // Detect when interim results
       if (event.results[0].isFinal) {
-        result.innerHTML += " " + speechResult + ".";
+        // Capitalize the first letter of the speech result and append a period
+        result.innerHTML += " " + capitalizeFirstLetter(speechResult.trim()) + ".";
         result.querySelector("p").remove();
       } else {
-        // creative p with class interim if not already there
+        // Create a p with class interim if not already there
         if (!document.querySelector(".interim")) {
           const interim = document.createElement("p");
           interim.classList.add("interim");
           result.appendChild(interim);
         }
-        // update the interim p with the speech result
-        document.querySelector(".interim").innerHTML = " " + speechResult;
+        // Update the interim p with the speech result
+        document.querySelector(".interim").innerHTML =
+          " " + capitalizeFirstLetter(speechResult.trim());
       }
       downloadBtn.disabled = false;
     };
