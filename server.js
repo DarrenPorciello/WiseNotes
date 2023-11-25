@@ -28,6 +28,16 @@ app.get('/Notes', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'note.html'));
   });
 
+// Define a route for the Intro page
+app.get('/Intro', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'intro.html'));
+  });
+
+// Define a route for the Intro page
+app.get('/Create', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'createNote.html'));
+  });
+
   
 // Start the server
 app.listen(PORT, () => {
