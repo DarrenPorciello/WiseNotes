@@ -2,7 +2,8 @@ const recordBtn = document.querySelector(".record"),
   result = document.querySelector(".result"),
   downloadBtn = document.querySelector(".download"),
   inputLanguage = document.querySelector("#language"),
-  clearBtn = document.querySelector(".clear");
+  clearBtn = document.querySelector(".clear"),
+  noteBtn = document.querySelector(".note");
 
 let SpeechRecognition =
     window.SpeechRecognition || window.webkitSpeechRecognition,
@@ -55,6 +56,7 @@ function speechToText() {
           " " + capitalizeFirstLetter(speechResult.trim());
       }
       downloadBtn.disabled = false;
+      noteBtn.disabled = false;
     };
     
 
@@ -105,33 +107,32 @@ function download() {
   const text = result.innerText;
   const filename = "speech.txt";
 
-  fetch('/download', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ text, filename }),
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      if (data.success) {
-        // Handle success
-      } else {
-        // Handle failure
-      }
-    })
-    .catch((error) => {
-      console.error('Error:', error);
-    });
+  const element = document.createElement("a");
+  element.setAttribute(
+    "href",
+    "data:text/plain;charset=utf-8," + encodeURIComponent(text)
+  );
+  element.setAttribute("download", filename);
+  element.style.display = "none";
+  document.body.appendChild(element);
+  element.click();
+  document.body.removeChild(element);
 }
-
-
 
 
 
 downloadBtn.addEventListener("click", download);
 
+
+
+function autoNote() {
+  console.log("Note button pressed")
+}
+
+noteBtn.addEventListener("click", autoNote);
+
 clearBtn.addEventListener("click", () => {
   result.innerHTML = "";
   downloadBtn.disabled = true;
+  noteBtn.disabled = true;
 });

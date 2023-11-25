@@ -50,6 +50,13 @@ body {
   
 }
 
+.buttons .note {
+  background-color: rgb(255, 255, 117); /* Set your desired shade of yellow */
+  /* Add other styling properties as needed */
+  color: black; /* Set text color to black, or another color that contrasts well with yellow */
+  /* Additional styling properties like padding, border-radius, etc. */
+}
+
 .container .heading2 {
   font-size: 20px;
   font-weight: 500;
@@ -106,6 +113,9 @@ body {
   background-color: var(--light-text-color);
   cursor: not-allowed;
 }
+
+
+
 .container .record img {
   width: 30px;
   height: 30px;
