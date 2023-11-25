@@ -22,11 +22,12 @@ body {
   color: var(--text-color);
 }
 .container {
-  width: 400px;
-  padding: 20px;
+  width: 65vw; /* Adjust the viewport width unit as needed */
+  padding: 5vw; /* Adjust the viewport width unit as needed */
   border-radius: 10px;
   background-color: var(--bg-color);
 }
+
 .container .heading {
   font-size: 25px;
   font-weight: 500;
