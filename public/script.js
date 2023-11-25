@@ -5,6 +5,7 @@ const recordBtn = document.querySelector(".record"),
   clearBtn = document.querySelector(".clear"),
   noteBtn = document.querySelector(".note");
 
+
 let SpeechRecognition =
     window.SpeechRecognition || window.webkitSpeechRecognition,
   recognition,

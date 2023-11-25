@@ -4,6 +4,11 @@ const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+require('dotenv').config();
+
+//console.log(process.env);
+api_key = process.env.API_KEY;
+//console.log(api_key);
 // Serve static files (HTML, CSS, JS, and SVG)
 app.use(express.static(path.join(__dirname, 'public')));
 
