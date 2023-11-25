@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="\style.css" />
+    <title>WiseNotes</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="logo-container">
+        <img class="logo" src="\imgs\WiseNotesLogo.png" alt="WiseNotes Logo" />
+      </div>
+      <div
+        class="result"
+        spellcheck="false"
+        placeholder="Text will be shown here"
+      >
+        <p class="interim"></p>
+      </div>
+      <div class="buttons">
+
+        <button class="btn note" disabled>
+          <ion-icon name="cloud-download-outline"></ion-icon>
+          <p>Auto Note Enhancement &#x2728;</p>
+        </button>
+        
+      </div>
+    </div>
+
+    <script>
+        // Retrieve noteText from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const noteText = urlParams.get('noteText');
+
+        // Use noteText as needed
+        console.log('Note Text:', noteText);
+    </script>
+    
+
+    <!-- IONICONS -->
+<!-- Update paths to load Ionicons locally -->
+  <script type="module" src="/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="/ionicons/ionicons.js"></script>
+    <!-- LANGUAGES -->
+    <script src="\languages.js"></script>
+
+    <!-- SCRIPT -->
+    <script src="\script.js"></script>
+  </body>
+</html>

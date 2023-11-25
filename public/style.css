@@ -26,7 +26,7 @@ body {
   padding: 5vw; /* Adjust the viewport width unit as needed */
   border-radius: 10px;
   background-color: var(--bg-color);
-  margin-top: 5vh;
+  margin-top: 3vh;
   padding-top: 4vh;
 }
 

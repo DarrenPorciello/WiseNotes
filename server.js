@@ -18,7 +18,10 @@ app.get('/WiseNotes', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'function.html'));
 });
 
-
+// Define a route for the Notes page
+app.get('/Notes', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'note.html'));
+  });
 
   
 // Start the server

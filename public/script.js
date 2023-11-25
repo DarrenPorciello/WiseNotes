@@ -105,7 +105,7 @@ function stopRecording() {
 
 function download() {
   const text = result.innerText;
-  const filename = "speech.txt";
+  const filename = "lecture.txt";
 
   const element = document.createElement("a");
   element.setAttribute(
@@ -126,7 +126,10 @@ downloadBtn.addEventListener("click", download);
 
 
 function autoNote() {
-  console.log("Note button pressed")
+    // Redirect to the "/Notes" page
+    const noteText = result.innerText;
+    //Send data to next page
+    window.location.href = `/Notes?noteText=${encodeURIComponent(noteText)}`;
 }
 
 noteBtn.addEventListener("click", autoNote);
