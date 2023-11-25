@@ -22,17 +22,40 @@ body {
   color: var(--text-color);
 }
 .container {
-  width: 65vw; /* Adjust the viewport width unit as needed */
+  width: 80vw; /* Adjust the viewport width unit as needed */
   padding: 5vw; /* Adjust the viewport width unit as needed */
   border-radius: 10px;
   background-color: var(--bg-color);
+  margin-top: 5vh;
+  padding-top: 4vh;
 }
 
-.container .heading {
-  font-size: 25px;
+.container .heading1 {
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center; /* Center the content horizontally */
+  align-items: center; /* Center the content vertically */
+  height: 100%; /* Ensure the logo container takes the full height */
+}
+
+.logo {
+  width: 50vh; /* Ensure the logo doesn't exceed the container width */
+  height: 12vh; /* Maintain the aspect ratio */
+  margin-bottom: 20px; /* Adjust as needed for spacing */
+  
+}
+
+.container .heading2 {
+  font-size: 20px;
   font-weight: 500;
   margin-bottom: 10px;
 }
+
 .container .options select {
   width: 100%;
   padding: 10px;
@@ -96,7 +119,7 @@ body {
 }
 .container .result {
   width: 100%;
-  min-height: 200px;
+  min-height: 35vh;
   padding: 10px;
   border: 1px solid var(--light-text-color);
   border-radius: 5px;
