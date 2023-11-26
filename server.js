@@ -6,6 +6,13 @@ const PORT = process.env.PORT || 3000;
 
 require('dotenv').config();
 
+//openAI
+//const { OpenAIAPI } = require('openai');
+//const openai = new OpenAIAPI({ key: process.env.API_KEY });
+//Config is for deining things like api key
+//Openapi interactign with api generating input
+
+
 //console.log(process.env);
 api_key = process.env.API_KEY;
 //console.log(api_key);
@@ -39,6 +46,16 @@ app.get('/Create', (req, res) => {
   });
 
   
+
+
+
+
+
+
+
+
+
+
 // Start the server
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);

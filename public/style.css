@@ -30,6 +30,20 @@ body {
   padding-top: 4vh;
 }
 
+.container .userInput {
+  width: 100%;
+  min-height: 50vh;
+  padding: 10px;
+  border: 1px solid var(--light-text-color);
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  color: var(--text-color);
+}
+
+
+
 .container .heading1 {
   font-size: 30px;
   font-weight: 600;
