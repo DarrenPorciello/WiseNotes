@@ -71,6 +71,9 @@ body {
   /* Additional styling properties like padding, border-radius, etc. */
 }
 
+.note:hover {
+  background-color: rgb(214, 214, 89); /* Adjust the last value (alpha channel) for darkness */
+}
 .container .heading2 {
   font-size: 20px;
   font-weight: 500;
@@ -141,9 +144,31 @@ body {
   background-color: var(--primary-color);
 }
 
+
+.back {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  height: 40px;
+  padding: 20px;
+  width: 200px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  color: #fff;
+  background-color:#4c70d3
+}
+
 .print:hover {
   background-color: rgb(35, 38, 133); /* Adjust the last value (alpha channel) for darkness */
 }
+
 
 .btn ion-icon {
   font-size: 30px;

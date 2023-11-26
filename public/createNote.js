@@ -49,3 +49,6 @@ noteBtn.addEventListener("click", function () {
       
   });
 
+  function goToHomePage() {
+    window.location.href = "/Intro";
+  }

@@ -12,25 +12,10 @@ const { Configuration, OpenAIApi} = require("openai")
 
 const configuration = new Configuration({
     organization: "org-RXhSqGz82WKTM2FghSsJ8ezT",
-    apiKey: "",
+    apiKey: process.env.API_KEY,
 });
 
 const openai = new  OpenAIApi(configuration);
-
-//const completion = await openai.createChatCompletion({
-/*  model: "gpt-3.5-turbo",
-  messages: [
-    {role : "user", content: "Hello world"}
-  ]
-
-})
-console.log(completion.data.choices[0].message);
-*/
-//openAI
-//const { OpenAIAPI } = require('openai');
-//const openai = new OpenAIAPI({ key: process.env.API_KEY });
-//Config is for deining things like api key
-//Openapi interactign with api generating input
 
 
 //console.log(process.env);
@@ -92,7 +77,7 @@ app.post('/enhanceNote', async (req, res) => {
     const completion = await openai.createChatCompletion({
       model: "gpt-3.5-turbo",
       messages: [
-        {role : "user", content: `You are an advanced study helper whose job is to enhance study notes. Clarify and make the input neater into a neat and well organized study file. Add headings, boldings, or other styles to make it look pretty and be easily understandable. Summarize the content into study material. Here is the text: ${content}`}
+        {role : "user", content: `You are an advanced study helper whose job is to enhance study notes. Clarify and make the input neater into a neat and well organized study file. Add headings, boldings, or other styles to make it look pretty and be easily understandable. Summarize the content into study material and bold headers and titles. Here is the text: ${content}`}
       ]
     
     })
