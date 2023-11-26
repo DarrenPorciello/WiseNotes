@@ -126,14 +126,60 @@ downloadBtn.addEventListener("click", download);
 
 
 
-function autoNote() {
+//function autoNote() 
     // Redirect to the "/Notes" page
-    const noteText = result.innerText;
+    //const noteText = result.innerText;
     //Send data to next page
-    window.location.href = `/Notes?noteText=${encodeURIComponent(noteText)}`;
-}
+    //window.location.href = `/Notes?noteText=${encodeURIComponent(noteText)}`;
 
-noteBtn.addEventListener("click", autoNote);
+
+// Add an event listener to the Auto Note Enhancement button
+noteBtn.addEventListener("click", function () {
+    
+  const content = result.innerText;
+  console.log(content);
+  //window.location.href = "/Enhanced";
+    // Send the content to the server using fetch
+    fetch("/enhanceNote", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ content }),
+    })
+      .then(response => response.json())
+      .then(data => {
+        window.location.href = "/Enhanced";
+        // Handle the response from the server if needed
+        console.log(data.completion.content);
+        console.log("hello")
+              // Handle the response from the server
+        const enhancedNote = data.completion.content;
+        //console.log(enhancedNote);
+            // Redirect to /Enhanced with enhancedNote as a query parameter
+        window.location.href = `/Enhanced?enhancedNote=${encodeURIComponent(enhancedNote)}`;
+        // Display the enhanced note on the screen
+        //resultContainer.innerHTML = `<p>${enhancedNote}</p>`;
+        
+      })
+      .catch(error => {
+        console.error("Error:", error);
+      });
+      
+  });
+
+
+
+
+
+
+
+
+
+
+
+  
+
 
 clearBtn.addEventListener("click", () => {
   result.innerHTML = "";
