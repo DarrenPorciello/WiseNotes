@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="\style.css" />
+    <title>WiseNotes</title>
+    <link rel="icon" href="\imgs\WiseNotesLogoBrowser.png" type="image/png">
+  </head>
+  <body>
+    <div class="container">
+
+    <div id="enhancedNote"></div>
+
+    </div>
+
+    <script>
+        // Retrieve enhancedNote from the query parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const enhancedNote = urlParams.get('enhancedNote');
+    
+        // Function to convert Markdown to HTML
+        function convertMarkdownToHTML(markdown) {
+          // Regular expression to match markdown-style bold (**text**)
+          const boldRegex = /\*\*(.*?)\*\*/g;
+          
+          // Replace markdown-style bold with HTML strong
+          const htmlText = markdown.replace(boldRegex, '<strong>$1</strong>');
+          
+          return htmlText;
+        }
+    
+        // Display enhancedNote in the HTML
+        const enhancedNoteElement = document.getElementById('enhancedNote');
+        enhancedNoteElement.innerHTML = convertMarkdownToHTML(enhancedNote).replace(/\n/g, '<br>');
+      </script>
+    
+    <!-- IONICONS -->
+    <!-- Update paths to load Ionicons locally -->
+
+  </body>
+</html>

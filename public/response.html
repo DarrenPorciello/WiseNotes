@@ -2,13 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Enhanced Note</title>
+  <link rel="stylesheet" href="\style.css">
+  <title>WiseNotes</title>
+  <link rel="icon" href="\imgs\WiseNotesLogoBrowser.png" type="image/png">
 </head>
 <body>
-  <h1>Enhanced Note</h1>
-  <div id="enhancedNote"></div>
+  <div class="container">
+    <div id="enhancedNote"></div>
+    <button class="print" onclick="printContent()">Print/Download</button>
+  </div>
 
+  <script src="https://unpkg.com/html2pdf.js"></script>
   <script>
     // Retrieve enhancedNote from the query parameters
     const urlParams = new URLSearchParams(window.location.search);
@@ -28,6 +34,20 @@
     // Display enhancedNote in the HTML
     const enhancedNoteElement = document.getElementById('enhancedNote');
     enhancedNoteElement.innerHTML = convertMarkdownToHTML(enhancedNote).replace(/\n/g, '<br>');
+
+
+    // Function to print the content of enhancedNote
+    function printContent() {
+      const contentToPrint = document.createElement('div');
+      contentToPrint.innerHTML = enhancedNoteElement.innerHTML;
+
+      const printWindow = window.open('', '_blank');
+      printWindow.document.write('<html><head><title>Print</title></head><body>');
+      printWindow.document.write(contentToPrint.innerHTML);
+      printWindow.document.write('</body></html>');
+      printWindow.document.close();
+      printWindow.print();
+    }
   </script>
 </body>
 </html>

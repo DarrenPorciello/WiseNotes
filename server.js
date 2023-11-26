@@ -12,7 +12,7 @@ const { Configuration, OpenAIApi} = require("openai")
 
 const configuration = new Configuration({
     organization: "org-RXhSqGz82WKTM2FghSsJ8ezT",
-    apiKey: "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",
+    apiKey: "",
 });
 
 const openai = new  OpenAIApi(configuration);
@@ -92,7 +92,7 @@ app.post('/enhanceNote', async (req, res) => {
     const completion = await openai.createChatCompletion({
       model: "gpt-3.5-turbo",
       messages: [
-        {role : "user", content: `You are an advanced study helper whose job is to enhance study notes. Clarify and make the input neater into a neat and well organized study file. Add headings, boldings, or other styles to make it look pretty and be easily understandable. Here is the text: ${content}`}
+        {role : "user", content: `You are an advanced study helper whose job is to enhance study notes. Clarify and make the input neater into a neat and well organized study file. Add headings, boldings, or other styles to make it look pretty and be easily understandable. Summarize the content into study material. Here is the text: ${content}`}
       ]
     
     })

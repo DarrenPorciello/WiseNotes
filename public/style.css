@@ -120,6 +120,31 @@ body {
   color: #fff;
   background-color: var(--primary-color);
 }
+
+.print {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  height: 40px;
+  padding: 20px;
+  width: 200px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  color: #fff;
+  background-color: var(--primary-color);
+}
+
+.print:hover {
+  background-color: rgb(35, 38, 133); /* Adjust the last value (alpha channel) for darkness */
+}
+
 .btn ion-icon {
   font-size: 30px;
 }
