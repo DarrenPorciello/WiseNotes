@@ -7,16 +7,27 @@
 </head>
 <body>
   <h1>Enhanced Note</h1>
-  <p id="enhancedNote"></p>
+  <div id="enhancedNote"></div>
 
   <script>
     // Retrieve enhancedNote from the query parameters
     const urlParams = new URLSearchParams(window.location.search);
     const enhancedNote = urlParams.get('enhancedNote');
 
+    // Function to convert Markdown to HTML
+    function convertMarkdownToHTML(markdown) {
+      // Regular expression to match markdown-style bold (**text**)
+      const boldRegex = /\*\*(.*?)\*\*/g;
+      
+      // Replace markdown-style bold with HTML strong
+      const htmlText = markdown.replace(boldRegex, '<strong>$1</strong>');
+      
+      return htmlText;
+    }
+
     // Display enhancedNote in the HTML
-    document.getElementById('enhancedNote').innerText = enhancedNote;
+    const enhancedNoteElement = document.getElementById('enhancedNote');
+    enhancedNoteElement.innerHTML = convertMarkdownToHTML(enhancedNote).replace(/\n/g, '<br>');
   </script>
 </body>
 </html>
-
