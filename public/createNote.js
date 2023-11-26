@@ -17,8 +17,9 @@ userInput.addEventListener("input", function () {
 
 // Add an event listener to the Auto Note Enhancement button
 noteBtn.addEventListener("click", function () {
-    const content = userInput.value;
-  
+    
+  const content = userInput.value;
+  //window.location.href = "/Enhanced";
     // Send the content to the server using fetch
     fetch("/enhanceNote", {
       method: "POST",
@@ -29,11 +30,22 @@ noteBtn.addEventListener("click", function () {
     })
       .then(response => response.json())
       .then(data => {
+        //window.location.href = "/Enhanced";
         // Handle the response from the server if needed
-        console.log(data);
+        console.log(data.completion.content);
+        console.log("hello")
+              // Handle the response from the server
+        const enhancedNote = data.completion.content;
+        //console.log(enhancedNote);
+            // Redirect to /Enhanced with enhancedNote as a query parameter
+        window.location.href = `/Enhanced?enhancedNote=${encodeURIComponent(enhancedNote)}`;
+        // Display the enhanced note on the screen
+        //resultContainer.innerHTML = `<p>${enhancedNote}</p>`;
+        
       })
       .catch(error => {
         console.error("Error:", error);
       });
+      
   });
 

@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enhanced Note</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enhanced Note</title>
 </head>
 <body>
-    <div id="enhancedNote"></div>
-    <script>
-        // Assuming you have a variable called `enhancedNote` available
-        const enhancedNote = "<%= enhancedNote %>";
-        document.getElementById("enhancedNote").innerText = enhancedNote;
-    </script>
+  <h1>Enhanced Note</h1>
+  <p id="enhancedNote"></p>
+
+  <script>
+    // Retrieve enhancedNote from the query parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const enhancedNote = urlParams.get('enhancedNote');
+
+    // Display enhancedNote in the HTML
+    document.getElementById('enhancedNote').innerText = enhancedNote;
+  </script>
 </body>
 </html>
+

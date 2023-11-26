@@ -12,7 +12,7 @@ const { Configuration, OpenAIApi} = require("openai")
 
 const configuration = new Configuration({
     organization: "org-RXhSqGz82WKTM2FghSsJ8ezT",
-    apiKey: "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",
+    apiKey: "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",
 });
 
 const openai = new  OpenAIApi(configuration);
@@ -85,10 +85,10 @@ app.get('/Enhanced', (req, res) => {
 
 // Handle Auto Note Enhancement request
 app.post('/enhanceNote', async (req, res) => {
-  console.log("Button pressed")
+  //console.log("Button pressed")
   try {
     const { content } = req.body;
-    console.log(content)
+    //console.log(content)
     const completion = await openai.createChatCompletion({
       model: "gpt-3.5-turbo",
       messages: [
@@ -116,7 +116,14 @@ app.post('/enhanceNote', async (req, res) => {
       message: "Working",
     });*/
     
-  
+    const enhancedNote = completion.data.choices[0].message;
+
+    // Send the enhancedNote as JSON response
+    //res.json({ enhancedNote });
+    // Send the result to /Enhanced and include the enhancedNote in the response.html file
+    //res.sendFile(path.join(__dirname, 'public', 'response.html'), {
+    //  enhancedNote,
+    //});
   
     
   }
