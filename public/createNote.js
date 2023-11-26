@@ -15,3 +15,25 @@ userInput.addEventListener("input", function () {
 
 
 
+// Add an event listener to the Auto Note Enhancement button
+noteBtn.addEventListener("click", function () {
+    const content = userInput.value;
+  
+    // Send the content to the server using fetch
+    fetch("/enhanceNote", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ content }),
+    })
+      .then(response => response.json())
+      .then(data => {
+        // Handle the response from the server if needed
+        console.log(data);
+      })
+      .catch(error => {
+        console.error("Error:", error);
+      });
+  });
+
