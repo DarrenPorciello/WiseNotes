@@ -21,11 +21,10 @@ const openai = new  OpenAIApi(configuration);
 //console.log(process.env);
 api_key = process.env.API_KEY;
 //console.log(api_key);
-// Serve static files (HTML, CSS, JS, and SVG)
+
 app.use(express.static(path.join(__dirname, 'public')));
 
-//new
-//app.use(bodyParser.json());
+
 app.use(cors());
 
 // Parse JSON request bodies
@@ -91,25 +90,10 @@ app.post('/enhanceNote', async (req, res) => {
 
     console.log(completion.data.choices[0].message);
 
-    // Render the response.html page with the enhancedNote variable
-    //res.render('response', { enhancedNote });
-    // Implement logic to interact with OpenAI API or any other processing
-    // You can use the 'content' variable to access the user input
-    // For now, let's just send a success response
-    //res.json({ success: true });
-    /*return res.status(200).json({
-      message: "Working",
-    });*/
     
     const enhancedNote = completion.data.choices[0].message;
 
-    // Send the enhancedNote as JSON response
-    //res.json({ enhancedNote });
-    // Send the result to /Enhanced and include the enhancedNote in the response.html file
-    //res.sendFile(path.join(__dirname, 'public', 'response.html'), {
-    //  enhancedNote,
-    //});
-  
+ 
     
   }
 
@@ -118,11 +102,6 @@ app.post('/enhanceNote', async (req, res) => {
   }
 
 });  
-
-
-
-
-
 
 
 

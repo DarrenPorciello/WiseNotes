@@ -52,7 +52,7 @@ function speechToText() {
           interim.classList.add("interim");
           result.appendChild(interim);
         }
-        // Update the interim p with the speech result
+        // Update the p with the speech result
         document.querySelector(".interim").innerHTML =
           " " + capitalizeFirstLetter(speechResult.trim());
       }
@@ -121,9 +121,7 @@ function download() {
 }
 
 
-
 downloadBtn.addEventListener("click", download);
-
 
 
 //function autoNote() 
@@ -156,7 +154,7 @@ noteBtn.addEventListener("click", function () {
               // Handle the response from the server
         const enhancedNote = data.completion.content;
         //console.log(enhancedNote);
-            // Redirect to /Enhanced with enhancedNote as a query parameter
+        // Redirect to /Enhanced 
         window.location.href = `/Enhanced?enhancedNote=${encodeURIComponent(enhancedNote)}`;
         // Display the enhanced note on the screen
         //resultContainer.innerHTML = `<p>${enhancedNote}</p>`;

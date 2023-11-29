@@ -22,8 +22,8 @@ body {
   color: var(--text-color);
 }
 .container {
-  width: 80vw; /* Adjust the viewport width unit as needed */
-  padding: 5vw; /* Adjust the viewport width unit as needed */
+  width: 80vw; 
+  padding: 5vw; 
   border-radius: 10px;
   background-color: var(--bg-color);
   margin-top: 3vh;
@@ -52,23 +52,22 @@ body {
 
 .logo-container {
   display: flex;
-  justify-content: center; /* Center the content horizontally */
-  align-items: center; /* Center the content vertically */
-  height: 100%; /* Ensure the logo container takes the full height */
+  justify-content: center; 
+  align-items: center; 
+  height: 100%; 
 }
 
 .logo {
-  width: 50vh; /* Ensure the logo doesn't exceed the container width */
-  height: 12vh; /* Maintain the aspect ratio */
-  margin-bottom: 20px; /* Adjust as needed for spacing */
+  width: 50vh; 
+  height: 12vh; 
+  margin-bottom: 20px; 
   
 }
 
 .buttons .note {
-  background-color: rgb(255, 255, 117); /* Set your desired shade of yellow */
-  /* Add other styling properties as needed */
-  color: black; /* Set text color to black, or another color that contrasts well with yellow */
-  /* Additional styling properties like padding, border-radius, etc. */
+  background-color: rgb(255, 255, 117); 
+  color: black; 
+  
 }
 
 .note:hover {
@@ -166,7 +165,7 @@ body {
 }
 
 .print:hover {
-  background-color: rgb(35, 38, 133); /* Adjust the last value (alpha channel) for darkness */
+  background-color: rgb(35, 38, 133); 
 }
 
 
