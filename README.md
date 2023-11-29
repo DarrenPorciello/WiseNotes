@@ -47,6 +47,10 @@ WiseNotes relies on the following dependencies:
 
 This project is licensed under the ISC License.
 
+### API Usage
+
+Replace 'YOUR API KEY HERE' with your Open AI API key in the server.js file.
+
 ### Author
 
 Darren Porciello
