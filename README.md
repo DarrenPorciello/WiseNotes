@@ -1,5 +1,7 @@
 # WiseNotes
 
+Link to demo: https://www.linkedin.com/feed/update/urn:li:activity:7135785192882851840/
+
 ## Version: 1.0.0
 
 WiseNotes is an application designed to enhance the student experience by automating the note-taking process, allowing users to concentrate more on the lecture content. This project leverages various technologies to provide a seamless and efficient solution for capturing and organizing information.
@@ -57,4 +59,4 @@ Darren Porciello
 
 ### How WiseNotes Works
 
-WiseNotes utilizes the power of Axios, Body Parser, CORS, dotenv, Express, Node-fetch, and the OpenAI API to create a robust system that automates the note-taking process. The server is set up using `server.js`, and you can start the server using `npm start` or `npm run dev` for development with nodemon.
+WiseNotes utilizes the power of Axios, Body Parser, CORS, dotenv, Express, Node-fetch, and the OpenAI API to create an application that automates the note-taking process. The server is set up using `server.js`, and you can start the server using `npm start` or `npm run dev` for development with nodemon.
